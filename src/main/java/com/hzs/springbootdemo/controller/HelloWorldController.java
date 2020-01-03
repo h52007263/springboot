@@ -52,7 +52,7 @@ public class HelloWorldController {
      */
     @PostMapping("/get")
     @ResponseBody
-    public Result<User> getUser(@RequestBody UserQuery userQuery) {
+    public Result<UserVO> getUser(@RequestBody UserQuery userQuery) {
         // 1.入参判断
         log.info("HelloWorldController -> getUser start, username={}", JSON.toJSONString(userQuery));
         if (StringUtils.isEmpty(userQuery.getUserName())) {

@@ -1,11 +1,11 @@
-package com.hzs.springbootdemo.filter;
+package com.hzs.springbootdemo.config.filter;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
- * TODO
+ * MyFilter
  *
  * @author hezhensheng3
  * @date 2020-01-02 16:24

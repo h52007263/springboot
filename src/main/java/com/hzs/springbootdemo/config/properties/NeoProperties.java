@@ -1,16 +1,23 @@
-package com.hzs.springbootdemo.properties;
+package com.hzs.springbootdemo.config.properties;
 
 import org.springframework.beans.factory.annotation.Value;
 
 /**
- * TODO
+ * 属性配置NeoProperties
  *
  * @author hezhensheng3
  * @date 2020-01-02 16:32
  **/
 public class NeoProperties {
+    /**
+     * 标题
+     */
     @Value("${com.neo.title}")
     private String title;
+
+    /**
+     * 描述
+     */
     @Value("${com.neo.description}")
     private String description;
 

@@ -2,8 +2,9 @@ package com.hzs.springbootdemo.service.impl;
 
 import com.hzs.springbootdemo.dao.UserRepository;
 import com.hzs.springbootdemo.domain.User;
+import com.hzs.springbootdemo.model.user.UserVO;
 import com.hzs.springbootdemo.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -29,9 +30,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByUserName(String userName) {
-        User user = userRepository.findByUserName(userName);
-        return user;
+    public UserVO findByUserName(String userName) {
+        try {
+            User user = userRepository.findByUserName(userName);
+            UserVO userVO = convertVO(user);
+            return userVO;
+        } catch (Exception e) {
+            throw new RuntimeException("service发生异常");
+        }
     }
 
     /**
@@ -44,4 +50,28 @@ public class UserServiceImpl implements UserService {
         user.setPassword("1234");
         return user;
     }
+
+    private UserVO convertVO(User user) {
+        UserVO userVO = new UserVO();
+        if (user == null) {
+            return userVO;
+        }
+        if (user.getEmail() != null) {
+            userVO.setEmail(user.getEmail());
+        }
+        if (user.getUserName() != null) {
+            userVO.setUserName(user.getUserName());
+        }
+        if (user.getNickName() != null) {
+            userVO.setNickName(user.getNickName());
+        }
+        if (user.getPassword() != null) {
+            userVO.setPassword(user.getPassword());
+        }
+        if (user.getRegTime() != null) {
+            userVO.setRegTime(user.getRegTime());
+        }
+        return userVO;
+    }
+
 }

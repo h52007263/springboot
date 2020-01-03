@@ -1,4 +1,4 @@
-package com.hzs.springbootdemo.filter;
+package com.hzs.springbootdemo.config.filter;
 
 import org.apache.catalina.filters.RemoteIpFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * TODO
+ * WebConfiguration
  *
  * @author hezhensheng3
  * @date 2020-01-02 16:22

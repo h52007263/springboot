@@ -1,6 +1,7 @@
 package com.hzs.springbootdemo.service;
 
 import com.hzs.springbootdemo.domain.User;
+import com.hzs.springbootdemo.model.user.UserVO;
 
 /**
  * userService接口
@@ -13,12 +14,12 @@ public interface UserService {
      * 获取一个用户
      * @return
      */
-    public User getUser();
+    User getUser();
 
     /**
      * 根据username获取user
      * @param userName
      * @return
      */
-    public User findByUserName(String userName);
+    UserVO findByUserName(String userName);
 }

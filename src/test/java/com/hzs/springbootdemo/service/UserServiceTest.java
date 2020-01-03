@@ -3,6 +3,7 @@ package com.hzs.springbootdemo.service;
 import com.alibaba.fastjson.JSON;
 import com.hzs.springbootdemo.dao.user.UserRepositoryTest;
 import com.hzs.springbootdemo.domain.User;
+import com.hzs.springbootdemo.model.user.UserVO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -27,7 +28,7 @@ public class UserServiceTest {
 
     @Test
     public void findUserTest() {
-        User user = userService.findByUserName("aa1");
+        UserVO user = userService.findByUserName("aa1");
         log.info("UserServiceTest -> findUserTest end, user={}", JSON.toJSONString(user));
     }
 

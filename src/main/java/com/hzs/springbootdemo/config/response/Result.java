@@ -1,4 +1,4 @@
-package com.hzs.springbootdemo.response;
+package com.hzs.springbootdemo.config.response;
 
 import java.util.List;
 

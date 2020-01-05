@@ -13,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import javax.transaction.Transactional;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
@@ -35,10 +36,11 @@ public class UserRepositoryTest {
     /**
      * 增加用户测试
      */
+    @Transactional
     @Test
     public void addUserTest() {
-        User user = new User();
-        userRepository.save(new User("a", "a@126.com", "a", "a123456","2020-1-1"));
+        userRepository.save(new User("a01", "a01", "a01", "a01","2020-1-1"));
+        System.out.println("增加成功");
     }
 
     @Test
